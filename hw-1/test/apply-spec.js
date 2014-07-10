@@ -1,4 +1,4 @@
-describe("_nycda.apply", function () {
+ddescribe("_nycda.apply", function () {
 
     it("Should set a property to undefined if no value is passed in", function () {
         expect(_nycda.apply({name: "Charlie"}, 'name')).toEqual({name: undefined});

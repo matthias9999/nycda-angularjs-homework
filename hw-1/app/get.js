@@ -4,14 +4,14 @@ _nycda.get = function (item, property) {
     if(item && property) {
         if (property.indexOf(".") >= 0) {
 
-/*
+
             // this one works already and completes get.js
             var arr = property.split(".");
             while(arr.length && (item = item[arr.shift()]));
             return item;
-*/
-            // this is an alternative which does not yet with properties that dont exist
 
+            // this is an alternative which does not yet with properties that dont exist
+/*
             var arr = property.split(".");
             var str = "item";
             //count elements + construct return term
@@ -26,7 +26,7 @@ _nycda.get = function (item, property) {
                 return eval(str);
             }
 
-
+*/
 
         }
         else {

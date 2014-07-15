@@ -1,7 +1,7 @@
 {
-  "name": "hw-1",
+  "name": "hw-2",
   "version": "0.0.1",
-  "description": "Homework 1, NYCDA's Angular JS 101.",
+  "description": "Homework 2, NYCDA's Angular JS 101.",
   "author": "Trevor Ewen",
   "license": "GNU",
   "devDependencies": {

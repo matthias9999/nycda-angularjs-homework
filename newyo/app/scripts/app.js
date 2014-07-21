@@ -1,0 +1,73 @@
+'use strict';
+
+/**
+ * @ngdoc overview
+ * @name newyoApp
+ * @description
+ * # newyoApp
+ *
+ * Main module of the application.
+ */
+angular
+  .module('newyoApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch'
+  ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+
+angular.module('newyoApp', []).constant('Data', {
+    questions: [
+        {question: 'Matthias is an old dude born in?', options: [
+            {value: '1920'},
+            {value: '1960'},
+            {value: '1984', correct: true},
+            {value: '2000'},
+            {value: '2010'}
+        ]},
+        {question: 'What pet does Matthias have?', options: [
+            {value: 'Cat', correct: true},
+            {value: 'Dog'},
+            {value: 'Fish'},
+            {value: 'Rabbit'},
+            {value: 'Other'}
+        ]},
+        {question: 'Where does Matthias come from?', options: [
+            {value: 'Island'},
+            {value: 'Cambodia'},
+            {value: 'Antarctica'},
+            {value: 'Germany', correct: true},
+            {value: 'USA'},
+            {value: 'Japan'},
+            {value: 'Tasmania'}
+        ]},
+        {question: 'How many siblings does Matthias have?', options: [
+            {value: 'More than 4'},
+            {value: '4'},
+            {value: '3'},
+            {value: '2'},
+            {value: '1'},
+            {value: 'None', correct: true}
+        ]},
+        {question: 'Do you eat seafood?', options: [
+            {value: true, correct: true},
+            {value: false}
+        ]}
+    ]
+});

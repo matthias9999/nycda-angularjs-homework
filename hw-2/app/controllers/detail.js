@@ -5,8 +5,6 @@ angular.module('questions').controller('Detail',
                 question.answer = option;
                 $scope.answers = {};
 
-                // why dont I see the variables in chrome angular extension
-
                 if (option.correct) {
                     $scope.answers = { question: question.question, useranswer: "right"};
                     $scope.answers.message = "Dude, that is so right!";

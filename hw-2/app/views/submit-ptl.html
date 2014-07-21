@@ -1,0 +1,16 @@
+<div class="row"
+     ng-controller="Submit">
+    <div class="col-xs-12 col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button type="button"
+                        class="btn btn-success btn-lg btn-block"
+                        ng-click="addAlert()">Submit your answers!
+                </button>
+            </div>
+            <div class="panel-body">
+                <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+            </div>
+        </div>
+    </div>
+</div>

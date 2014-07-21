@@ -1,4 +1,4 @@
-angular.module('questions').controller('Detail',
+angular.module('newyoApp').controller('Detail',
     ['$scope',
         function ($scope) {
             $scope.onSelectAnswer = function (question, option) {

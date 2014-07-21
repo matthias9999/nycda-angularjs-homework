@@ -41,8 +41,8 @@ describe("List", function () {
                 expect($scope.getRowClass({question: 'In what place were you born?'})).toEqual('');
             });
 
-            it("Should return success when passed a question with an answer property", function () {
-                expect($scope.getRowClass({answer: 'Burrito'})).toEqual('success');
+            it("Should return red when passed a question with a wrong answer property", function () {
+                expect($scope.getRowClass({answer: 'Burrito'})).toEqual('red');
             });
 
         });

@@ -1,38 +1,38 @@
 angular.module('questions', []).constant('Data', {
     questions: [
-        {question: 'How often do you watch sports?', options: [
-            {value: 'Everyday'},
-            {value: 'Often'},
-            {value: 'Some days'},
-            {value: 'Rarely'},
-            {value: 'Never'}
+        {question: 'Matthias is an old dude born in?', options: [
+            {value: '1920'},
+            {value: '1960'},
+            {value: '1984', correct: true},
+            {value: '2000'},
+            {value: '2010'}
         ]},
-        {question: 'What is the best pet for your home?', options: [
-            {value: 'Cat'},
-            {value: 'Dog', correct: true},
+        {question: 'What pet does Matthias have?', options: [
+            {value: 'Cat', correct: true},
+            {value: 'Dog'},
             {value: 'Fish'},
             {value: 'Rabbit'},
             {value: 'Other'}
         ]},
-        {question: 'What is your preferred bank?', options: [
-            {value: 'Chase'},
-            {value: 'Citi'},
-            {value: 'Bank of America'},
-            {value: 'Wells Fargo'},
-            {value: 'Regional'},
-            {value: 'Online'},
-            {value: 'Other'}
+        {question: 'Where does Matthias come from?', options: [
+            {value: 'Island'},
+            {value: 'Cambodia'},
+            {value: 'Antarctica'},
+            {value: 'Germany', correct: true},
+            {value: 'USA'},
+            {value: 'Japan'},
+            {value: 'Tasmania'}
         ]},
-        {question: 'How many siblings do you have?', options: [
+        {question: 'How many siblings does Matthias have?', options: [
             {value: 'More than 4'},
             {value: '4'},
             {value: '3'},
             {value: '2'},
             {value: '1'},
-            {value: 'None'}
+            {value: 'None', correct: true}
         ]},
         {question: 'Do you eat seafood?', options: [
-            {value: true},
+            {value: true, correct: true},
             {value: false}
         ]}
     ]

@@ -1,4 +1,4 @@
-angular.module('questions').controller('List',
+angular.module('newyoApp').controller('List',
     ['$scope', 'Data',
         function ($scope, data) {
             $scope.selectedQuestion = null;
@@ -13,7 +13,7 @@ angular.module('questions').controller('List',
             $scope.getRowClass = function (question) {
                 if (question && question.answer && question.answer.correct) {
                     $scope.answers[question.question] = "right";
-                    return 'success'
+                    return 'green'
                 } else if (question && question.answer) {
                     $scope.answers[question.question] = "wrong";
                     return 'red'

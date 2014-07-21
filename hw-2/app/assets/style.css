@@ -9,3 +9,8 @@ h1 {
 .red {
     color: red;
 }
+
+#correctAnswer {
+    text-align: center;
+    font-weight: bold;
+}

@@ -22,10 +22,12 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container">
     <div class="row">
+
     <!-- Add your site or application content here -->
-    <div class="col-md-8" ng-controller="SearchCtrl">
+    <div class="col-md-12" ng-controller="SearchCtrl">
         <input ng-model="term" class="form-control"
                placeholder="Article Search" ng-keyup="getArticles()" />
 
@@ -49,26 +51,43 @@
             </div>
         </form>
         -->
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table" ng-show="articles.length">
+                    <thead>
+                    <tr>
+                        <td class="head-element">Article</td>
+                        <td class="head-element">Link</td>
+                    </tr>
+                    </thead>
+                    <tbody class="table-striped">
+                    <tr ng-bind="error" style="color:red;"></tr>
+                    <tr ng-repeat="r in articles">
+                        <td>{{r.headline.main}}</td>
+                        <!--<td>{{r.web_url}}</td>-->
+                        <td><button ng-controller="TestfbCtrl" type="submit"
+                                class="btn btn-danger"
+                                ng-click="onAddArticle(r)">+
+                        </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4 cut" ng-controller="TestfbCtrl">
+                <div ng-repeat="(id, a) in addedArticles">
+                    <p>{{a.url}}</p>
+                </div>
+            </div>
+        </div>
 
-        <table class="table" ng-show="articles.length">
-            <thead>
-            <tr>
-                <td class="head-element">Article</td>
-                <td class="head-element">Link</td>
-            </tr>
-            </thead>
-            <tbody class="table-striped">
-            <tr ng-bind="error" style="color:red;"></tr>
-            <tr ng-repeat="r in articles">
-                <td>{{r.headline.main}}</td>
-                <td>{{r.web_url}}</td>
-            </tr>
-            </tbody>
-        </table>
 
-        <br>
     </div>
-    <div class="col-md-4" ng-controller="TestfbCtrl">
+    </div>
+
+
+    <!--
+    <div class="container" ng-controller="TestfbCtrl">
         <form role="form">
             <div class="form-group col-xs-12 col-md-9">
                 <input type="text"
@@ -83,13 +102,9 @@
                 </button>
             </div>
         </form>
-        <div ng-repeat="(id, a) in addedArticles">
-            <p>{{a.title}}</p>
-        </div>
-    </div>
 
     </div>
-    </div>
+    -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

@@ -16,7 +16,7 @@ angular.module('hw3App')
             var articlesRef = firebaseRef('/articles');
 
             $scope.articleName = "";
-            $scope.onAddArticle = function () {
-                articlesRef.push({title: $scope.articleName});
+            $scope.onAddArticle = function (r) {
+                articlesRef.push({title: r.headline.main, url: r.web_url});
             };
     }]);

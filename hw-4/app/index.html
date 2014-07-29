@@ -31,7 +31,7 @@
         <input ng-model="term" class="form-control"
                placeholder="Article Search" ng-keyup="getArticles()" />
 
-       <!--
+       <!-- BUTTON VERSION WITH ng-click
         <form role="form"
                 >
             <div class="form-group col-xs-12 col-md-9">
@@ -57,14 +57,13 @@
                     <thead>
                     <tr>
                         <td class="head-element">Article</td>
-                        <td class="head-element">Link</td>
+                        <td class="head-element">Add</td>
                     </tr>
                     </thead>
                     <tbody class="table-striped">
                     <tr ng-bind="error" style="color:red;"></tr>
                     <tr ng-repeat="r in articles">
-                        <td>{{r.headline.main}}</td>
-                        <!--<td>{{r.web_url}}</td>-->
+                        <td><a href="{{r.web_url}}" target="_blank">{{r.headline.main}}</a></td>
                         <td><button ng-controller="TestfbCtrl" type="submit"
                                 class="btn btn-danger"
                                 ng-click="onAddArticle(r)">+
@@ -75,9 +74,32 @@
                 </table>
             </div>
             <div class="col-md-4 cut" ng-controller="TestfbCtrl">
+              <table class="table" ng-show="addedArticles">
+                    <thead>
+                    <tr>
+                        <td class="head-element">Article</td>
+                        <td class="head-element">Remove</td>
+                    </tr>
+                    </thead>
+                    <tbody class="table-striped">
+
+                    <tr ng-bind="error" style="color:red;"></tr>
+                    <tr ng-repeat="(id, a) in addedArticles">
+                        <td><a href="{{a.url}}" target="_blank">{{a.title}}</a></td>
+                        <td><button type="submit"
+                                    class="btn btn-danger"
+                                    ng-click="deleteArticle(id)">-
+                        </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--
                 <div ng-repeat="(id, a) in addedArticles">
-                    <p>{{a.url}}</p>
+                    <a href="{{a.url}}">{{a.title}}</a>
                 </div>
+                -->
+
             </div>
         </div>
 

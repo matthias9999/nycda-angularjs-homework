@@ -16,7 +16,13 @@ angular.module('hw3App')
             var articlesRef = firebaseRef('/articles');
 
             $scope.articleName = "";
+            $scope.articleCount = articlesRef.length;
             $scope.onAddArticle = function (r) {
                 articlesRef.push({title: r.headline.main, url: r.web_url});
             };
+
+            $scope.deleteArticle = function (id) {
+                var itemRef = new Firebase('https://crackling-fire-6084.firebaseio.com/articles/' + id);
+                itemRef.remove();
+                }
     }]);

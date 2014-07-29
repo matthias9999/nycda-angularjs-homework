@@ -18,7 +18,6 @@ angular.module('hw3App')
         var applyData = function(result) {
             $scope.articles = {};
             $scope.articles = result.data.response.docs;
-            $scope.articles.shift();
         };
 
         $scope.getArticles = function() {

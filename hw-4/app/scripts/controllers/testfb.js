@@ -20,8 +20,6 @@ angular.module('hw3App')
             syncData('/articles').$bind($scope, 'addedArticles');
 
             var articlesRef = firebaseRef('/articles');
-
-/*
             $scope.articleName = "";
             $scope.articleCount = articlesRef.length;
             $scope.onAddArticle = function (r) {
@@ -33,10 +31,11 @@ angular.module('hw3App')
                 itemRef.remove();
                 }
     }]);
-*/
+/*
             //Adding an article by name
             $scope.articleName = "";
-            $scope.onAddArticle = function () {
+            $scope.onAddArticle2 = function () {
                 articlesRef.push({title: $scope.articleName});
             };
         }]);
+*/

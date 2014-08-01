@@ -8,8 +8,7 @@
  * Controller of the hw3App
  */
 angular.module('hw3App')
-/*
-    .controller('SearchCtrl', ['$scope', '$http', '$q', function ($scope, $http, $q) {
+    .controller('SearchCtrl', ['$scope', '$http', '$q', 'newYorkTimes', 'articles', function ($scope, $http, $q, newYorkTimes, articles) {
 
         var clearError = function(result) {
             $scope.error = "";
@@ -17,28 +16,13 @@ angular.module('hw3App')
         };
 
         var applyData = function(result) {
-            $scope.articles = {};
-            $scope.articles = result.data.response.docs;
+            $scope.articles = articles.list = result.data.response.docs;
         };
 
-        $scope.getArticles = function() {
+        $scope.getArticles = _.debounce(function() {
             $http({
                 method: 'GET',
                 url: "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+$scope.term+"&api-key=052861d142cf4eb7fa12bb79781fdbe1:11:69591426",
             }).then(clearError).then(applyData);
-        };
-
-
-
+        },500);
     }]);
-*/
-    .controller('SearchCtrl', ['$scope', 'newYorkTimes', 'articles',
-        function ($scope, newYorkTimes, articles) {
-
-            $scope.onSearch = function (term) {
-                newYorkTimes.articles(term).then(function (result) {
-                    articles.list = result.data;
-                });
-            };
-
-        }]);

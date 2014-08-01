@@ -28,10 +28,6 @@
     <div class="container">
     <div class="row">
 
-    <!-- Add your site or application content here -->
-    <div class="col-md-12" ng-controller="SearchCtrl">
-        <input ng-model="term" class="form-control"
-               placeholder="Article Search" ng-keyup="getArticles()" />
 
        <!-- BUTTON VERSION WITH ng-click
         <form role="form"
@@ -54,7 +50,13 @@
             </div>
         </form>
         -->
-        <div class="row">
+        <!-- Add your site or application content here -->
+        <div class="col-md-12" ng-controller="SearchCtrl">
+
+                <input ng-model="term" class="form-control"
+                   placeholder="Article Search" ng-keyup="getArticles()" />
+
+            <div class="row">
             <div class="col-md-8">
                 <table class="table" ng-show="articles.length">
                     <thead>
@@ -104,21 +106,13 @@
                 -->
 
             </div>
+                <ng-include src="'views/word-count-analysis.html'"></ng-include>
         </div>
 
-
-
-            <div class="form-group col-xs-12 col-md-3">
-                <button type="submit"
-                        class="btn btn-danger"
-                        ng-click="onSearch(searchTerm)">Search NYT Articles
-                </button>
-            </div>
-        </form>
-        <ng-include src="'views/word-count-analysis.html'"></ng-include>
+    </div>
 
     </div>
-    </div>
+
 
 
     <!--
@@ -190,6 +184,7 @@
     <script src="bower_components/nvd3/nv.d3.js"></script>
     <script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
     <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -199,12 +194,9 @@
     <script src="scripts/angularfire/config.js"></script>
     <script src="scripts/services/firebase.js"></script>
         <script src="scripts/controllers/testfb.js"></script>
-<<<<<<< HEAD
-=======
         <script src="scripts/controllers/word-count-analysis.js"></script>
         <script src="scripts/services/new-york-times.js"></script>
         <script src="scripts/services/articles.js"></script>
->>>>>>> upstream/master
         <!-- endbuild -->
 </body>
 </html>

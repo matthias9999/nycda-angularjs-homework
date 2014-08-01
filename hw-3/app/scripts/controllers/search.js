@@ -7,7 +7,12 @@
  * # SearchCtrl
  * Controller of the hw3App
  */
+angular.module('hw1App', [])
+
+angular.module('hw2App', [])
+
 angular.module('hw3App')
+<<<<<<< HEAD
   .controller('SearchCtrl', ['$scope', '$http', '$q', function ($scope, $http, $q) {
 
     $scope.term = 'Korea';
@@ -35,3 +40,12 @@ angular.module('hw3App')
 
 
 
+=======
+  .controller('SearchCtrl', function ($scope, $resource) {
+
+  });
+
+angular.module('hw4App', ['hw1App', 'hw2App', 'hw3App']).controller('NewCtrl', function ($scope) {
+
+});
+>>>>>>> upstream/master

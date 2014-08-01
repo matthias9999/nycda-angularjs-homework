@@ -8,10 +8,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="bower_components/nvd3/nv.d3.css">
+      <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
   </head>
@@ -37,6 +39,7 @@
             <div class="form-group col-xs-12 col-md-9">
                 <input type="text"
                        ng-model="term"
+                       ng-model="searchTerm" //have to get rid off came from master
                        class="form-control"
                        placeholder="Article Search"
                         >
@@ -103,6 +106,16 @@
             </div>
         </div>
 
+
+
+            <div class="form-group col-xs-12 col-md-3">
+                <button type="submit"
+                        class="btn btn-danger"
+                        ng-click="onSearch(searchTerm)">Search NYT Articles
+                </button>
+            </div>
+        </form>
+        <ng-include src="'views/word-count-analysis.html'"></ng-include>
 
     </div>
     </div>
@@ -173,6 +186,10 @@
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
     <script src="bower_components/angularfire/angularfire.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/nv.d3.js"></script>
+    <script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -182,6 +199,12 @@
     <script src="scripts/angularfire/config.js"></script>
     <script src="scripts/services/firebase.js"></script>
         <script src="scripts/controllers/testfb.js"></script>
+<<<<<<< HEAD
+=======
+        <script src="scripts/controllers/word-count-analysis.js"></script>
+        <script src="scripts/services/new-york-times.js"></script>
+        <script src="scripts/services/articles.js"></script>
+>>>>>>> upstream/master
         <!-- endbuild -->
 </body>
 </html>
